@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 text-center">
+      <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-body p-5">
+          <h1 class="display-6 fw-bold mb-3">Welcome to your Personal CRM</h1>
+          <p class="lead text-muted mb-4">Organize contacts, track follow-ups, and keep your relationships close at hand.</p>
+          {% if user.is_authenticated %}
+            <a href="{% url 'crm:dashboard' %}" class="btn btn-primary">Go to Dashboard</a>
+            <a href="{% url 'logout' %}" class="btn btn-outline-secondary">Logout</a>
+          {% else %}
+            <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+            <a href="{% url 'register' %}" class="btn btn-outline-primary">Create Account</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
