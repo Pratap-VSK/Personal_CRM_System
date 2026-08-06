@@ -77,5 +77,3 @@ project_root/
 │
 └── manage.py               # Django administrative script
 
-**Intern ID: CITS3073
-**
